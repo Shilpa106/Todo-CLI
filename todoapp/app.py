@@ -35,15 +35,15 @@ def main():
         command = input('$ ')
         # command_type,command_name,command_args
         # split the string separated by space
-        command_type = command.split()[0]
+        # command_type = command.split()[0]
         command_name,command_args = parse(command)
-        if (command == 'quit'):
+        if (command_name == 'quit'):
             break
         elif(command_name=='help'):
             with open('help.txt','r') as help_file:
                 print(help_file.read())
         elif(command_name == 'invalid'):
-            print('Please enter a valid command.')
+            print('Please enter a valid command use help command to display all!')
         elif(command_name == 'use'):
             file_name=commands_dict[command_name](command_args)
             if (file_name == -1):
@@ -55,6 +55,7 @@ def main():
             # print('use command')
             #
         elif(command.split()[0] == 'todo'):
+            # todo type of command
             command_args.insert(0, current_list)
         
             commands_dict[command_name](command_args)
