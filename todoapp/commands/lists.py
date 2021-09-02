@@ -10,8 +10,13 @@ def show_lists(args):
     try:
       data = json.load(lists_json)
       # print(data)
-      for index, todo_list in enumerate(data.keys()):
-        print(index + 1, data[todo_list]['title'])
+
+
+      for index, todo_item in enumerate(data):
+            # print(todo_item)
+            print(index + 1, todo_item['title'])
+      
+    
     except:
       print('Some error occurred!')
 
